@@ -232,8 +232,8 @@ picture = DocPic . makeLabeled Picture . decodeUtf8
 
 -- | Inline math parser, surrounded by \$\$ and \$\$.
 --
--- >>> parseString "$$\int_{-infty}^{infty} e^{-x^2/2} = \sqrt{2\pi}$$"
--- DocMathInline (DocString "\int_{-infty}^{infty} e^{-x^2/2} = \sqrt{2\pi}")
+-- >>> parseString "$$\\int_{-\\infty}^{\\infty} e^{-x^2/2} = \\sqrt{2\\pi}$$"
+-- DocMathInline "\\int_{-\\infty}^{\\infty} e^{-x^2/2} = \\sqrt{2\\pi}"
 mathDisplay :: Parser (DocH mod a)
 mathDisplay = DocMathInline . decodeUtf8
               <$> disallowNewline  ("$$" *> takeUntil "$$")
