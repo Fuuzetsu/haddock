@@ -246,7 +246,7 @@ mathInline = DocMathInline . decodeUtf8
 -- DocMathDisplay "\\int_{-\\infty}^{\\infty} e^{-x^2/2} = \\sqrt{2\\pi}"
 mathDisplay :: Parser (DocH mod a)
 mathDisplay = DocMathDisplay . decodeUtf8
-              <$> disallowNewline  ("\\[" *> takeUntil "\\]")
+              <$> ("\\[" *> takeUntil "\\]")
 
 markdownImage :: Parser (DocH mod a)
 markdownImage = fromHyperlink <$> ("!" *> linkParser)
