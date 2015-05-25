@@ -228,10 +228,6 @@ picture :: Parser (DocH mod a)
 picture = DocPic . makeLabeled Picture . decodeUtf8
           <$> disallowNewline ("<<" *> takeUntil ">>")
 
--- FIXME: I have just copied the code for `picture` but it is not
--- clear why we should disallow a newline (if that is what
--- `disallowNewline` does)
-
 -- | Inline math parser, surrounded by \\( and \\).
 --
 -- >>> parseString "\\(\\int_{-\\infty}^{\\infty} e^{-x^2/2} = \\sqrt{2\\pi}\\)"

@@ -283,7 +283,6 @@ markupTag dflags = Markup {
   markupBold                 = box (TagInline "b"),
   markupMonospaced           = box (TagInline "tt"),
   markupPic                  = const $ str " ",
-  -- FIXME: We could actually emit the mathjax as it is moderately readable
   markupMathInline           = const $ str "<math>",
   markupMathDisplay          = const $ str "<math>",
   markupUnorderedList        = box (TagL 'u'),
